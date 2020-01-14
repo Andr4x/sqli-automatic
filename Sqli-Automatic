@@ -1,5 +1,5 @@
 #!/bin/bash
-#Tool Created By Andr4x
+#Tool Created By Dr3xey
 #OffensiveEncode Org
 echo "Processo de Instalacao Iniciando.."
 git clone  https://github.com/sqlmapproject/sqlmap
